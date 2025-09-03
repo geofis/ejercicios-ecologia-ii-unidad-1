@@ -1,0 +1,1176 @@
+---
+title: "Untitled"
+author: "La doñita"
+date: "2025-08-20"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+
+
+**La experiencia prepara a los estudiantes para ser ecólogos que pueden contribuir efectivamente a la conservación de la biodiversidad.**
+---
+# ***Propuesta 1 Notebook LM***
+
+# 🧪 EL DILEMA DE LOS RENOS ÁRTICOS: POBLACION Y LIMITES
+
+## 🎯 **Objetivos**
+*   Calcular y simular el **crecimiento poblacional** bajo diferentes condiciones (exponencial y logística).
+*   Identificar el impacto de la **capacidad de carga (K)** y la **resistencia ambiental** en la dinámica poblacional.
+*   Comprender el concepto de **efecto Allee** y su relevancia en la regulación y conservación de poblaciones.
+*   Relacionar la simulación con los principios de **factores limitantes** (Ley del Mínimo de Liebig y Ley de Tolerancia de Shelford).
+
+## 📋 **Materiales:**
+*   Celular
+*   Lápiz y papel
+*   Ficha de Datos de la Actividad 
+
+---
+
+## Ficha de Datos de la Actividad: El Dilema de los Renos Árticos
+
+**Escenario:**
+Ustedes son un equipo de ecólogos de campo encargados de monitorear una pequeña y **aislada población de renos árticos** en una remota isla. La principal fuente de alimento para los renos, especialmente durante los largos inviernos, es el liquen (*Cladonia*). Su tarea es proyectar la dinámica de esta población y entender los factores que la regulan.
+
+**Datos Iniciales (Año 0):**
+*   **Población de Renos (N):** 100 individuos
+*   **Capacidad de Carga del Hábitat (K):** 500 individuos (Esta es la densidad máxima que puede sustentar el hábitat con sus recursos disponibles)
+*   **Tasa de Natalidad Bruta (b):** 0.3 (30 nacimientos por cada 100 individuos al año)
+*   **Tasa de Mortalidad Bruta (d):** 0.1 (10 muertes por cada 100 individuos al año)
+
+---
+
+## Actividad: Simulación y Análisis de la Dinámica Poblacional
+
+### 🔬 **Parte 1: Crecimiento Poblacional Ilimitado**
+
+1.  **Calcule la Tasa de Crecimiento Intrínseca (r):**
+    *   La tasa de crecimiento intrínseca (r) representa el **potencial biótico** de la población en condiciones ideales.
+    *   Fórmula: $r = b - d$
+    *   *Muestre su cálculo aquí:*
+        *   r = ____ - ____ = ____
+
+2.  **Proyecte el Crecimiento Exponencial (ignorando K por ahora):**
+    *   Este modelo asume recursos ilimitados, llevando a una tasa de aumento poblacional en continua aceleración.
+    *   Fórmula simplificada para el próximo año: `N(t+1) = N(t) * (1 + r)`
+    *   **Calcule la población de renos para:**
+        *   **Año 1:** N(1) = N(0) * (1 + r) = ____ * (1 + ____) = ____ individuos
+        *   **Año 2:** N(2) = N(1) * (1 + r) = ____ * (1 + ____) = ____ individuos
+
+3.  **Reflexión:**
+    *   ¿Es realista esta proyección de crecimiento a largo plazo en la naturaleza? ¿Por qué sí o por qué no, basándose en lo que aprendimos sobre la **resistencia ambiental** y los **factores limitantes**?
+
+---
+
+### Parte 2: Integrando la Capacidad de Carga y la Resistencia Ambiental
+
+1.  **Calcule el Crecimiento Logístico (considerando K = 500 individuos):**
+    *   El modelo logístico de crecimiento poblacional incorpora la **resistencia ambiental** y la **capacidad de carga (K)**, mostrando cómo la tasa de crecimiento disminuye a medida que la población se acerca a K.
+    *   La **capacidad de carga (K)** se define como la asíntota superior de la curva de crecimiento en forma de S, representando la capacidad máxima del hábitat.
+    *   Fórmula para la Tasa de Crecimiento Ajustada: `r_ajustada = r * (1 - N/K)`
+    *   Fórmula para la Población en el siguiente año: `N(t+1) = N(t) + (N(t) * r_ajustada)`
+    *   **Calcule la población de renos para los años 1 al 5, redondeando al entero más cercano:**
+
+| Año | Población (N) | (1 - N/K) | r_ajustada = r * (1 - N/K) | Aumento (N * r_ajustada) | Nueva Población N(t+1) |
+| :-- | :------------ | :-------- | :-------------------------- | :----------------------- | :---------------------- |
+| 0   | 100           |           |                             |                          |                         |
+| 1   |               |           |                             |                          |                         |
+| 2   |               |           |                             |                          |                         |
+| 3   |               |           |                             |                          |                         |
+| 4   |               |           |                             |                          |                         |
+| 5   |               |           |                             |                          |                         |
+
+2.  **Grafique las Curvas de Crecimiento:**
+    *   Cree un gráfico simple con el "Año" en el eje X y la "Población (N)" en el eje Y.
+    *   Dibuje dos líneas: una para el crecimiento exponencial (Parte 1) y otra para el crecimiento logístico (Parte 2).
+    *   Marque el valor de K (500 individuos) en su gráfico.
+
+3.  **Reflexión:**
+    *   ¿Qué tipo de curva de crecimiento observa en la simulación logística? ¿Cómo difiere visualmente del crecimiento ilimitado?
+    *   ¿Cómo se manifiesta la "resistencia ambiental" en este escenario y en qué momento es más fuerte?
+
+---
+
+## Parte 3: Impacto de un Factor Limitante Adicional y el Efecto Allee
+
+1.  **Escenario Adicional: Invierno Extremo (Año 6):**
+    *   Supongamos que en el Año 5 ocurre un invierno excepcionalmente severo. Esto reduce la disponibilidad de liquen y la cohesión social es crucial.
+    *   Aplicaremos el **Efecto Allee**: Si la población de renos al final del Año 5 cae por debajo de 150 individuos, la Tasa de Mortalidad Bruta (d) se duplica para el Año 6 (de 0.1 a 0.2) debido a la dificultad para encontrar pareja o defenderse en grupos pequeños.
+    *   **Calcule la población para el Año 6, aplicando la regla del Efecto Allee:**
+        *   Población en Año 5 (de la tabla anterior): ______ individuos.
+        *   ¿Es menor a 150? (Sí/No) ____
+        *   Si SÍ: Nueva Tasa de Mortalidad (d_nueva) = 0.2. Nueva `r_efectiva = b - d_nueva`. Recalcule `N(6)` usando `r_efectiva` y la población del Año 5 en la fórmula logística.
+        *   Si NO: Use la tasa de mortalidad original (d = 0.1) y la población del Año 5 en la fórmula logística.
+        *   *Muestre sus cálculos para el Año 6 y el resultado:*
+        *   N(6) = ____ individuos
+
+2.  **Reflexión:**
+    *   ¿Cómo el "invierno extremo" y la consideración del Efecto Allee cambiaron la proyección de la población para el Año 6?
+    *   ¿Por qué es importante considerar el Efecto Allee en la **biología de la conservación** de especies vulnerables?
+    *   ¿Con qué leyes de los **factores limitantes** (Ley del Mínimo de Liebig o Ley de Tolerancia de Shelford) podría relacionarse este invierno extremo y la escasez de liquen? Explique brevemente. La Ley del Mínimo de Liebig establece que el crecimiento está limitado por el recurso más escaso. La Ley de Tolerancia de Shelford indica que los organismos tienen un rango de condiciones ambientales que pueden tolerar, y más allá de esos límites, su desempeño se ve afectado.
+
+---
+
+## Plenaria:
+
+*   Comparar las curvas de crecimiento obtenidas y la visualización de la **forma de J (exponencial)** y la **forma de S (logística)**.
+*   Discutir cómo la **capacidad de carga (K)** y la **resistencia ambiental** actúan como mecanismos reguladores **dependientes de la densidad**.
+*   Explorar cómo los **factores físicos** (como el clima extremo) y la **disponibilidad de recursos** (liquen) pueden actuar como **factores limitantes** (conectando con la Ley de Liebig del Mínimo y la Ley de Tolerancia de Shelford).
+*   Analizar las implicaciones del **Efecto Allee** para la supervivencia de poblaciones pequeñas y su relevancia en las **estrategias de conservación**.
+*   Concluir con la idea de que la comprensión de estos principios de **dinámica poblacional** es fundamental para el **manejo de recursos**  y la **sostenibilidad**.
+
+---
+# ***Propuesta 2 Claude 1***
+
+# 🧪 ANÁLISIS DE DATOS POBLACIONALES
+
+---
+
+## 🎯 **Objetivos**
+
+*   **Calcular parámetros poblacionales básicos** (tamaño, densidad, estructura etaria)  
+*   **Analizar patrones de crecimiento poblacional** usando modelos exponencial y logístico  
+*   **Identificar factores limitantes** en poblaciones reales  
+*   **Interpretar efectos de factores ambientales** en la distribución poblacional  
+*   **Aplicar conceptos teóricos** a datos empíricos de especies dominicanas
+
+---
+
+## 📋 **Materiales:**
+
+- **Computadora/tablet** con Excel, Google Sheets, o R
+- **Calculadora científica**
+- **Hojas de datos** 
+- **Plantillas de gráficos** para análisis
+
+---
+
+## 🔬 **Parte 1: Características Poblacionales**
+
+### **📈 Dataset: Población de Iguana Rinoceronte (*Cyclura cornuta*)**
+### Parque Nacional del Este, República Dominicana
+
+**Contexto:** La iguana rinoceronte es una especie endémica en peligro crítico. Se necesita analizarar datos de censo poblacional para determinar el estado de la población.
+
+### **Datos Proporcionados:**
+
+
+ÁREA DE ESTUDIO: 2,500 hectáreas (hábitat total)
+ÁREA UTILIZABLE: 850 hectáreas (hábitat apropiado)
+CENSO 2023: 127 individuos observados
+
+ESTRUCTURA ETARIA:
+- Juveniles (0-2 años): 45 individuos
+- Subadultos (3-5 años): 38 individuos  
+- Adultos (6-15 años): 32 individuos
+- Seniles (>15 años): 12 individuos
+
+DISTRIBUCIÓN POR SEXO (adultos):
+- Machos: 18 individuos
+- Hembras: 14 individuos
+
+COORDENADAS GPS (muestra de 20 individuos):
+(18.123, -68.456), (18.127, -68.461), (18.125, -68.463),
+(18.129, -68.459), (18.131, -68.465), (18.126, -68.460),
+(18.124, -68.458), (18.128, -68.462), (18.130, -68.464),
+(18.122, -68.457), (18.133, -68.467), (18.127, -68.459),
+(18.125, -68.461), (18.131, -68.463), (18.129, -68.465),
+(18.124, -68.460), (18.126, -68.462), (18.128, -68.464),
+(18.132, -68.466), (18.123, -68.458)
+
+### **🎯 Tareas a realizar:**
+
+#### **1.1 Cálculo de Densidades**
+
+a) Densidad cruda = _____ iguanas/hectárea
+b) Densidad ecológica = _____ iguanas/hectárea
+c) ¿Cuál es más relevante para manejo? ¿Por qué?
+
+#### **1.2 Análisis de Estructura Etaria**
+
+a) Calcular porcentaje de cada grupo etario
+b) Clasificar el tipo de pirámide poblacional:
+   [ ] Expansiva  [ ] Estable  [ ] Constrictiva
+c) ¿Qué implica esto para el futuro de la población?
+
+#### **1.3 Razón de Sexos**
+
+a) Razón macho:hembra = _____
+b) ¿Es normal esta proporción? ¿Qué factores podrían influir?
+
+
+#### **1.4 Análisis de Distribución Espacial**
+
+Usando las coordenadas GPS:
+a) Plotear en gráfico X-Y las ubicaciones
+b) Determinar patrón de distribución:
+   [ ] Aleatorio  [ ] Agrupado  [ ] Regular
+c) ¿Qué factores ecológicos explican este patrón?
+
+
+---
+
+## 📊 **Parte 2: Modelado de Crecimiento Poblacional**
+
+### **📈 Dataset: Población de Manatí Antillano (*Trichechus manatus*)**
+### Santuario de Mamíferos Marinos Estero Hondo
+
+**Contexto:** Programa de conservación ha monitoreado esta población durante 15 años. Los estudiantes analizarán tendencias de crecimiento y proyectarán escenarios futuros.
+
+### **Datos Históricos (1998-2023):**
+
+AÑO    POBLACIÓN    NACIMIENTOS    MUERTES    CAPACIDAD_ESTIMADA
+1998      12            2            1            50
+2000      15            3            1            50
+2002      19            4            2            50  
+2004      24            5            2            50
+2006      28            4            3            50
+2008      31            3            3            50
+2010      33            2            3            50
+2012      34            1            2            50
+2014      35            1            1            50
+2016      36            1            2            50
+2018      37            2            2            50
+2020      38            1            1            50
+2022      39            1            1            50
+2023      40            1            1            50
+
+
+### **🎯 Tareas a realizar:**
+
+#### **2.1 Análisis de Tasa de Crecimiento**
+
+a) Calcular tasa de crecimiento (r) para cada período:
+   r = ln(Nt+1/Nt) / Δt
+   
+b) Tasa promedio de crecimiento = _____ año⁻¹
+
+c) ¿La población está creciendo, estable o declinando?
+
+
+#### **2.2 Ajuste de Modelo Exponencial**
+
+Usando los primeros 10 años (1998-2008):
+a) N₀ (1998) = 12 individuos
+b) r calculado = _____ año⁻¹
+c) Proyección para 2023 usando N(t) = N₀e^(rt):
+   N(2023) = _____ individuos
+d) Población real 2023 = 40 individuos
+e) ¿Coincide? ¿Por qué sí/no?
+
+
+#### **2.3 Ajuste de Modelo Logístico**
+
+a) K (capacidad de carga estimada) = 50 individuos
+b) Calcular r usando modelo logístico
+c) ¿Cuándo alcanzará la población el 90% de K?
+d) ¿Es realista esta proyección? Justificar.
+
+
+#### **2.4 Identificación de Efecto Allee**
+
+Observar datos 2008-2016:
+a) ¿Se reduce la tasa de crecimiento a densidades bajas?
+b) ¿Hay evidencia de umbral mínimo de Allee?
+c) Implicaciones para conservación:
+
+
+---
+
+## 🌍 **Parte 3: Factores Limitantes y Distribución**
+
+### **🌱 Dataset: Distribución de Palma Real (*Roystonea hispaniolana*)**
+### Gradiente Altitudinal Sierra de Bahoruco
+
+**Contexto:** Estudio de factores que limitan la distribución de esta palma endémica a lo largo de un gradiente ambiental en la Sierra de Bahoruco.
+
+### **Datos de Campo:**
+
+ALTITUD(m)  TEMP(°C)  PRECIPIT(mm)  DENSIDAD(ind/ha)  pH_SUELO  N_SUELO(%)
+   150        26.5        1200           45            6.8       2.1
+   300        25.2        1350           62            6.5       2.4  
+   450        23.8        1500           78            6.2       2.7
+   600        22.4        1650           85            5.9       2.5
+   750        21.1        1800           91            5.6       2.2
+   900        19.7        1950           88            5.3       1.9
+  1050        18.4        2100           82            5.0       1.6
+  1200        17.0        2250           75            4.7       1.3
+  1350        15.7        2400           65            4.4       1.0
+  1500        14.3        2550           48            4.1       0.8
+  1650        13.0        2700           25            3.8       0.5
+  1800        11.6        2850           8             3.5       0.3
+
+
+### **🎯 Tareas a realizar:**
+
+#### **3.1 Identificación del Óptimo Ecológico**
+
+a) ¿A qué altitud se encuentra la máxima densidad?
+b) Temperatura óptima = _____ °C
+c) Precipitación óptima = _____ mm
+d) pH óptimo = _____
+
+
+#### **3.2 Aplicación de Ley de Liebig**
+
+Analizar cada factor:
+a) ¿Cuál factor parece más limitante a bajas altitudes?
+b) ¿Cuál factor limita a grandes altitudes?
+c) ¿Hay evidencia de co-limitación por múltiples factores?
+
+
+#### **3.3 Ley de Tolerancia de Shelford**
+
+a) Rango de tolerancia térmica: _____ a _____ °C
+b) Límites letales aparentes:
+   - Temperatura mínima: _____ °C
+   - pH mínimo: _____
+c) Zona de estrés térmico: _____ a _____ °C
+
+
+#### **3.4 Gradiente Continuo vs. Discontinuo**
+
+a) ¿La distribución sigue un patrón continuo o discontinuo?
+b) ¿Hay "saltos" abruptos en la densidad?
+c) ¿Qué modelo explica mejor los datos? Justificar.
+
+
+---
+
+## 🗣 **Discusión**
+
+#### ** Características Poblacionales**
+- Densidades calculadas y su interpretación
+- Tipo de estructura etaria y implicaciones
+- Patrón de distribución espacial observado
+
+#### **Crecimiento Poblacional**
+- Comparación entre modelos exponencial y logístico
+- Evidencia de efectos de capacidad de carga
+- Recomendaciones de manejo basadas en los modelos
+
+#### **Factores Limitantes**
+- Factor más limitante identificado
+- Rangos de tolerancia determinados
+- Aplicación de las leyes de Liebig y Shelford
+
+
+### **🤔 Preguntas:**
+1. **¿Cómo se relacionan los tres datasets analizados con los diferentes tipos de factores limitantes estudiados en clase?**
+
+2. **¿Qué evidencia encontraron del efecto Allee? ¿Por qué es crucial para la conservación de especies en peligro?**
+
+3. **¿Cuál de las tres especies requiere intervención de manejo más urgente? Justificar con base en los datos.**
+
+4. **¿Cómo podrían el cambio climático y la deforestación afectar las distribuciones analizadas?**
+
+5. **¿Qué estrategias de conservación recomendarían para cada especie basándose en sus análisis?**
+
+6. **¿Cómo se pueden usar estos modelos poblacionales para informar políticas ambientales nacionales?**
+
+📚
+
+---
+
+# ***Propuesta 3 Claude 2***
+
+# 📱 ANÁLISIS POBLACIONAL 
+
+---
+
+## 🎯 **Objetivos**
+
+**Calcular parámetros poblacionales** usando calculadora 
+**Graficar manualmente** curvas de crecimiento poblacional  
+**Aplicar fórmulas** de modelos exponencial y logístico  
+**Interpretar datos** de distribución espacial y factores limitantes  
+**Conectar teoría con datos simulados** de especies 
+
+---
+
+## 📋 **Materiales:**
+
+### **📄 Archivo: "datos_poblacion_RD.txt"**
+
+=== DATASET PRÁCTICA ECOLOGÍA POBLACIONES ===
+
+ACTIVIDAD 1 - IGUANA RINOCERONTE (*Cyclura cornuta*)
+Parque Nacional del Este, 2023
+Total individuos: 127
+Área total: 2500 ha
+Área utilizable: 850 ha
+
+ESTRUCTURA ETARIA:
+Juveniles (0-2 años): 45
+Subadultos (3-5 años): 38  
+Adultos (6-15 años): 32
+Seniles (>15 años): 12
+
+ACTIVIDAD 2 - MANATÍ ANTILLANO (*Trichechus manatus*)
+Estero Hondo, 1998-2023
+
+AÑO,POBLACIÓN
+1998,12
+2000,15
+2002,19
+2004,24
+2006,28
+2008,31
+2010,33
+2012,34
+2014,35
+2016,36
+2018,37
+2020,38
+2022,39
+2023,40
+
+Capacidad de carga estimada: 50 individuos
+
+ACTIVIDAD 3 - PALMA REAL (*Roystonea hispaniolana*)
+Sierra de Bahoruco - Gradiente Altitudinal
+
+ALTITUD,TEMPERATURA,DENSIDAD
+150,26.5,45
+300,25.2,62
+450,23.8,78
+600,22.4,85
+750,21.1,91
+900,19.7,88
+1050,18.4,82
+1200,17.0,75
+1350,15.7,65
+1500,14.3,48
+1650,13.0,25
+1800,11.6,8
+
+
+---
+
+## 🔬 **Parte 1: Análisis de Estructura Poblacional**
+
+### **📊 Iguana Rinoceronte - Análisis Demográfico**
+
+
+#### **Paso 1: Cálculos básicos**
+
+CÁLCULOS REQUERIDOS:
+a) Densidad cruda = Total individuos ÷ Área total
+   = 127 ÷ 2500 = _____ iguanas/ha
+
+b) Densidad ecológica = Total individuos ÷ Área utilizable  
+   = 127 ÷ 850 = _____ iguanas/ha
+
+c) Porcentaje por grupo etario:
+   - % Juveniles = (45 ÷ 127) × 100 = _____% 
+   - % Subadultos = (38 ÷ 127) × 100 = _____% 
+   - % Adultos = (32 ÷ 127) × 100 = _____% 
+   - % Seniles = (12 ÷ 127) × 100 = _____%
+
+
+#### **Paso 2: Construcción de Pirámide Poblacional**
+
+MATERIALES: Hoja
+
+INSTRUCCIONES PARA DIBUJAR:
+1. Dibujar eje vertical con 4 categorías etarias
+2. Eje horizontal: 0% a 40%
+3. Dibujar barras horizontales según porcentajes calculados
+4. Colorear cada barra con color diferente
+
+ESQUEMA:
+Seniles (>15)     |████| 9.4%
+Adultos (6-15)    |█████████| 25.2%  
+Subadultos (3-5)  |██████████████| 29.9%
+Juveniles (0-2)   |███████████████████| 35.4%
+                  0%    10%    20%    30%    40%
+
+
+#### **Paso 3: Interpretación**
+
+PREGUNTAS:
+
+1. Tipo de pirámide: [ ] Expansiva [ ] Estable [ ] Constrictiva
+
+2. ¿Qué indica sobre el futuro de la población?
+   _________________________________________________
+
+3. ¿Cuál densidad es más útil para manejo? ¿Por qué?
+   _________________________________________________
+
+
+---
+
+## 📈 **Parte 2: Modelado de Crecimiento Poblacional**
+
+### **📊 Manatí Antillano - Análisis Temporal**
+
+#### **Paso 1: Cálculo de Tasas de Crecimiento**
+
+FÓRMULA: r = ln(Nt+1/Nt) ÷ Δt
+
+USAR CALCULADORA:
+(Nota: ln = función logaritmo natural)
+
+Períodos a calcular:
+a) 1998-2000: r = ln(15/12) ÷ 2 = ln(1.25) ÷ 2 = _____
+b) 2000-2002: r = ln(19/15) ÷ 2 = ln(1.27) ÷ 2 = _____
+c) 2002-2004: r = ln(24/19) ÷ 2 = ln(1.26) ÷ 2 = _____
+d) 2004-2006: r = ln(28/24) ÷ 2 = ln(1.17) ÷ 2 = _____
+
+PROMEDIO: r_promedio = (suma de todas las r) ÷ 4 = _____
+
+
+#### **Paso 2: Gráfico Manual de Población vs Tiempo**
+
+MATERIALES: Hoja
+
+INSTRUCCIONES:
+1. Eje X: Años (1998 a 2023)
+2. Eje Y: Población (0 a 50 individuos)  
+3. Plotear puntos de datos reales
+4. Dibujar línea conectando puntos
+5. Marcar línea horizontal en K=50 (capacidad de carga)
+
+DATOS A PLOTEAR:
+(1998,12), (2000,15), (2002,19), (2004,24), (2006,28),
+(2008,31), (2010,33), (2012,34), (2014,35), (2016,36),
+(2018,37), (2020,38), (2022,39), (2023,40)
+
+
+#### **Paso 3: Proyección con Modelo Logístico**
+
+FÓRMULA SIMPLIFICADA: N(t) = K/(1 + Ae^(-rt))
+Donde A = (K-N₀)/N₀
+
+CÁLCULOS CON CALCULADORA:
+Datos: N₀=12, K=50, r=0.06 (aprox)
+
+A = (50-12)/12 = 38/12 = 3.17
+
+Para proyectar 2030 (t=32 años desde 1998):
+N(2030) = 50/(1 + 3.17 × e^(-0.06×32))
+        = 50/(1 + 3.17 × e^(-1.92))
+        = 50/(1 + 3.17 × 0.15)
+        = 50/(1 + 0.48) = 50/1.48 = _____ individuos
+
+
+---
+
+## 🌍 **Parte 3: Factores Limitantes y Distribución**
+
+### **🌴 Palma Real - Gradiente Ambiental**
+
+#### **Paso 1: Identificación del Óptimo**
+
+REVISAR DATOS EN ARCHIVO DE TEXTO:
+
+BUSCAR EN LOS DATOS:
+a) Altitud con mayor densidad: _____ metros
+b) Temperatura correspondiente: _____ °C  
+c) Densidad máxima: _____ individuos/ha
+
+CALCULAR RANGOS:
+d) Rango altitudinal total: _____ a _____ metros
+e) Rango térmico total: _____ a _____ °C
+
+
+#### **Paso 2: Gráfico de Tolerancia Manual**
+
+CREAR GRÁFICO:
+
+EJE X: Temperatura (11°C a 27°C)
+EJE Y: Densidad (0 a 100 ind/ha)
+
+PUNTOS A PLOTEAR:
+(26.5,45), (25.2,62), (23.8,78), (22.4,85), (21.1,91),
+(19.7,88), (18.4,82), (17.0,75), (15.7,65), (14.3,48),
+(13.0,25), (11.6,8)
+
+DIBUJAR:
+1. Conectar puntos con línea suave
+2. Identificar zona óptima (densidad >80)
+3. Marcar zonas de estrés (densidad 20-80)  
+4. Marcar zonas letales (densidad <20)
+
+
+#### **Paso 3: Aplicación de Leyes Ecológicas**
+
+ANÁLISIS:
+
+LEY DE SHELFORD:
+a) Límite térmico inferior: _____ °C
+b) Límite térmico superior: _____ °C
+c) Zona óptima: _____ a _____ °C
+
+LEY DE LIEBIG:
+d) Factor más limitante a bajas altitudes: _______
+e) Factor más limitante a altas altitudes: _______
+
+
+---
+
+# 📱 **Presentación**
+
+#### **Paso 1: Productos**
+
+FOTOS:
+1. Pirámide poblacional dibujada (Actividad 1)
+2. Gráfico de crecimiento poblacional (Actividad 2)  
+3. Gráfico de tolerancia térmica (Actividad 3)
+4. Hoja con cálculos principales
+
+
+
+- Mostrar foto de pirámide poblacional
+- Reportar tipo de pirámide identificado
+- Explicar implicaciones para conservación
+
+- Mostrar gráfico de crecimiento
+- Reportar proyección para 2030
+- Mostrar gráfico de tolerancia y zona óptima
+- Dar recomendación de manejo
+
+
+---
+
+# 🧮 **FÓRMULAS CLAVE**
+
+## **📐 Para Usar en Calculadora del Celular:**
+
+### **🔢 Cálculos Básicos:**
+
+DENSIDAD:
+• Densidad = Individuos ÷ Área
+
+PORCENTAJES:
+• % = (Parte ÷ Total) × 100
+
+TASA DE CRECIMIENTO:
+• r = ln(Nt+1/Nt) ÷ Δt
+• ln() = función logaritmo natural en calculadora
+
+PROYECCIÓN EXPONENCIAL:
+• N(t) = N₀ × e^(r×t)
+• e^() = función exponencial en calculadora
+
+MODELO LOGÍSTICO SIMPLIFICADO:
+• N(t) = K/(1 + A×e^(-r×t))
+• A = (K-N₀)/N₀
+
+
+### **📊 Guía para Gráficos Manuales:**
+
+ELEMENTOS ESENCIALES:
+1. Ejes claramente etiquetados
+2. Escalas apropiadas y marcadas
+3. Título descriptivo
+4. Puntos de datos visibles
+5. Líneas suaves conectando puntos
+
+---
+
+# 🤔 **Preguntas**
+
+
+1. ¿Cómo se relacionan los patrones observados en las tres especies 
+   con los conceptos de factores limitantes estudiados?
+
+2. ¿Qué evidencia encontraron de que las poblaciones están reguladas 
+   por factores denso-dependientes vs denso-independientes?
+
+3. ¿Cuál de las tres especies necesita intervención más urgente 
+   y qué tipo de manejo recomendarían?
+   
+4. ¿Cómo podrían estos análisis ayudar en la toma de decisiones 
+   para conservación en República Dominicana?
+
+5. ¿Qué otras especies dominicanas podrían beneficiarse de 
+   análisis similares?
+
+6. ¿Cómo integrarían estos datos en un plan de manejo de 
+   área protegida?
+
+
+---
+
+
+# ***Propuesta 4***
+
+# 📱 ECOLOGÍA DE POBLACIONES
+
+---
+
+## 🎯 **Objetivos**
+
+Reafirmar los conocimientos mediante la **manipulación de datos poblacionales simulados**, análisis básico y reflexión crítica.
+
+---
+
+## Instrucciones generales
+1. Lee cuidadosamente el contexto y la tabla de datos.
+2. Responde a las preguntas.
+3. Discute tus resultados con tu grupo y prepárate para exponerlos brevemente.
+
+---
+
+## Parte 1. Crecimiento poblacional
+
+### Contexto
+Un grupo de investigadores estudió una población de **peces en un estanque artificial** durante 6 meses. Se registró el tamaño poblacional al inicio de cada mes.
+
+### Datos
+
+| Mes | Tamaño poblacional (N) |
+|-----|------------------------|
+| 0   | 20                     |
+| 1   | 35                     |
+| 2   | 65                     |
+| 3   | 120                    |
+| 4   | 190                    |
+| 5   | 250                    |
+| 6   | 280                    |
+
+### Actividades
+1. Grafique el tamaño poblacional (N) en función del tiempo (meses).  
+2. Identifique el tipo de curva de crecimiento (exponencial, logístico u otra).  
+3. Estime visualmente la **capacidad de carga (K)** del ambiente.  
+4. Explique qué factores podrían estar limitando el crecimiento de la población.  
+
+---
+
+## Parte 2. Estructura de edades
+
+### Contexto
+En el mismo estanque, se muestrearon **100 individuos** y se clasificaron en tres categorías de edad.
+
+### Datos
+
+| Clase etaria      | Número de individuos |
+|-------------------|----------------------|
+| Juveniles (0-1)   | 40                   |
+| Adultos (2-3)     | 45                   |
+| Senescentes (4+)  | 15                   |
+
+### Actividades
+1. Dibuje una **pirámide de edades** en su cuaderno.  
+2. Interprete la forma de la pirámide: ¿la población está en expansión, estable o en declive?  
+3. ¿Cómo influye esta estructura etaria en el potencial de crecimiento de la población?  
+
+---
+
+## Reflexión final
+- ¿Qué relación existe entre los factores ambientales (recursos, espacio, depredación) y la capacidad de carga?  
+- ¿Por qué es importante comprender el **efecto Allee** y la **resistencia ambiental** en la conservación de especies?  
+
+---
+
+# ***Propuesta 5***
+
+# 📱 ANÁLISIS DE DATOS POBLACIONALES Y FACTORES REGULADORES
+
+---
+
+## 🎯 **Objetivos**
+
+Que los estudiantes:
+- Calculen indicadores básicos de poblaciones (densidad, tasas de natalidad y mortalidad).  
+- Construyan una gráfica de crecimiento poblacional.  
+- Identifiquen patrones y posibles factores reguladores.  
+- Relacionen los hallazgos con teorías vistas en la conferencia (ley de Liebig, Shelford, efecto Allee).  
+
+## Materiales
+- Hoja con datos  
+- Lápiz, borrador y regla.  
+- Calculadora 
+
+## Datos simulados
+
+Ejemplo de hoja de datos que entregarás:
+
+| Año  | Población (N) | Área (km²) | Nacimientos | Muertes | Temp. media (°C) | Alimento disponible (%) |
+|------|---------------|------------|-------------|---------|------------------|-------------------------|
+| 2015 | 120           | 15         | 30          | 18      | 26               | 80                      |
+| 2016 | 135           | 15         | 28          | 19      | 27               | 70                      |
+| 2017 | 148           | 13         | 26          | 27      | 29               | 60                      |
+| 2018 | 140           | 12         | 24          | 28      | 30               | 55                      |
+| 2019 | 125           | 10         | 22          | 31      | 31               | 50                      |
+| 2020 | 110           | 8          | 18          | 28      | 33               | 40                      |
+
+---
+
+## Parte 1 – Cálculos básicos
+
+**Densidad poblacional**: calcular para cada año usando:  
+
+\[
+Densidad = \frac{N}{Área}
+\]
+
+**Tasa de natalidad y mortalidad (%):**
+
+\[
+Tasa\ natalidad = \frac{Nacimientos}{N} \times 100
+\]
+
+\[
+Tasa\ mortalidad = \frac{Muertes}{N} \times 100
+\]
+
+---
+
+## Parte 2 – Construcción de gráfica 
+
+- Hacer una gráfica de **N (población) vs. Año**.  
+- Observar si la tendencia se asemeja a un crecimiento **exponencial o logístico**.  
+- Marcar en la gráfica si hay un posible **umbral del efecto Allee** (punto bajo el cual la población empieza a caer más rápido).  
+
+---
+
+## Parte 3 – Interpretación de factores
+
+Comparar la tendencia poblacional con los valores de **temperatura** y **alimento disponible**.  
+
+**Discutir:**
+- ¿Qué factor podría ser limitante según la **ley de Liebig**?  
+- ¿Qué factor podría explicar la disminución según la **ley de tolerancia de Shelford**?  
+- Explicar cómo estos factores pueden haber afectado la densidad y el crecimiento.  
+
+---
+
+## Parte 4 – Conclusión y aplicación
+
+- Redactar en **3–4 oraciones** una recomendación de manejo para conservar o recuperar la población.  
+- Mencionar un hito histórico o aporte importante que respalde su propuesta (ej.: estudios de **Lotka-Volterra, Allee, Liebig**).  
+
+---
+
+# ***Propuesta 6***
+
+## **SIMULACIÓN DEL CRECIMIENTO POBLACIONAL Y FACTORES LIMITANTES**  
+
+**Objetivo:** 
+
+Manipular datos para analizar el crecimiento poblacional, identificar factores limitantes y relacionar conceptos teóricos con modelos prácticos.  
+
+---
+
+### **Materiales Necesarios**  
+- Hojas de cálculo 
+- Calculadoras.  
+- Tarjetas con escenarios ambientales (sequía, depredación, recursos abundantes, etc.).
+
+---
+
+#### **2. Simulación de Datos**  
+
+1. **Datos iniciales:**  
+   - Tamaño inicial (N₀): 10 conejos.  
+   - Tasa de crecimiento (r): 0.5 (sin limitantes).  
+   - Capacidad de carga (K): 200 individuos (recursos limitados).  
+
+2. **Ejercicio 1: Crecimiento Exponencial**  
+   - Calcular el tamaño poblacional (Nₜ) por 5 generaciones usando:  
+     \[
+     N_t = N_0 \cdot e^{rt}
+     \]  
+   - Graficar resultados en papel o digital.  
+
+3. **Ejercicio 2: Crecimiento Logístico**  
+   - Incorporar capacidad de carga (K) con la ecuación:  
+     \[
+     N_t = \frac{K}{1 + \left(\frac{K - N_0}{N_0}\right) \cdot e^{-rt}}
+     \]  
+   - Comparar ambas curvas y discutir diferencias.  
+
+4. **Factores Limitantes (Tarjetas de Escenarios):**  
+   - Cada equipo elige una tarjeta (ej.: "Sequía reduce K a 100", "Aumento de depredadores reduce r a 0.2").  
+   - Recalcular y graficar cómo cambia la población.  
+
+#### **3. Análisis y Discusión**  
+
+  - ¿Qué factores afectaron más la población?  
+  - ¿Cómo se relaciona esto con la ley de Liebig o Shelford?  
+  - ¿Qué pasaría si hay un "efecto Allee" (población pequeña no prospera)?  
+  - ¿Por qué especies en peligro requieren un mínimo poblacional?  
+  - ¿Cómo aplicarían esto al manejo de especies invasoras o protegidas?
+
+---
+
+# ***Propuesta 7***
+
+## **SIMULACION DE POBLACIONES CON RECURSOS LIMITADOS**  
+
+**Objetivo:** Simular el crecimiento poblacional, analizar factores limitantes y relacionar conceptos teóricos.  
+
+---
+
+### **Materiales Necesarios**  
+
+  - Tabla de datos base (ejemplo: tasas de natalidad/mortalidad por edad).  
+  - Ficha técnica de una especie (ej.: conejo, venado o planta). 
+  - Papel
+  - Lapiz
+  - Calculadora
+
+---
+
+#### **2. Simulación**  
+
+1. **Datos iniciales**
+   - Tamaño inicial (*N₀*): 10 individuos.  
+   - Tasa de natalidad (*b*): 0.3 crías/individuo/año.  
+   - Tasa de mortalidad (*d*): 0.1 muertes/individuo/año.  
+   - Capacidad de carga (*K*): 150 individuos.  
+
+2. **Ejercicio 1: Crecimiento Libre**  
+   - Calcular el tamaño poblacional para 3 generaciones usando:  
+     \[
+     N_{t+1} = N_t + (b \cdot N_t) - (d \cdot N_t)
+     \]  
+   - Anotar resultados en tabla.  
+
+3. **Ejercicio 2: Factores Limitantes**  
+   - Cada persona recibe un **factor ambiental aleatorio** (ej.: "Sequía reduce *K* a 80", "Enfermedad aumenta *d* a 0.3").  
+   - Recalcular el crecimiento para 3 generaciones incluyendo el factor.  
+   - Graficar (*tiempo vs. población*).  
+
+4. **Discusión cualitativa**  
+   - Comparar gráficas entre personas.  
+   - Preguntas guía:  
+     - ¿Cómo afectó cada factor a la población?  
+     - ¿Qué ley (Liebig o Shelford) explica mejor el resultado?  
+
+#### **3. Aplicación a la Conservación**  
+- **"¿Por qué el efecto Allee afecta a especies en peligro?"  
+  - Ejemplo: Si *N₀* = 5 (población pequeña), calcular si la población crece o se extingue.  
+  - "Propongan una medida de conservación basada en los datos simulados".  
+
+---
+
+# ***Propuesta 8***
+
+### **EL DILEMA DE LA POBLACIÓN DE COCODRILOS** 🐊
+
+**Objetivo**: 
+
+Analizar datos de una población hipotética para comprender y aplicar conceptos de crecimiento poblacional, capacidad de carga y factores limitantes.
+
+#### **Parte 1: Escenario**
+
+Se presenta a los estudiantes el caso de una población de cocodrilos (_Crocodylus acutus_) en un área protegida de la República Dominicana. Se les informa que los científicos han monitoreado la población durante varios años y han recopilado datos de censo.
+
+
+#### **Parte 2: Análisis de Datos**
+
+1.  **Datos de la población**: Tabla con datos simulados del tamaño de la población de cocodrilos a lo largo del tiempo.
+    * **Ejemplo de tabla de datos:**
+        | Año | Tamaño de la Población |
+        | :-- | :---------------------- |
+        | 1   | 50                     |
+        | 2   | 65                     |
+        | 3   | 83                     |
+        | 4   | 110                    |
+        | 5   | 145                    |
+        | 6   | 190                    |
+        | 7   | 240                    |
+        | 8   | 280                    |
+        | 9   | 310                    |
+        | 10  | 325                    |
+        | 11  | 330                    |
+        | 12  | 335                    |
+
+2.  **Instrucciones**:
+    * **Gráfica**: Grafiquen el **tamaño de la población** (eje Y) versus el **año** (eje X).
+    * **Análisis del crecimiento**: Identifiquen en qué fase se encuentra la población en diferentes momentos:
+        * **Fase de crecimiento exponencial**: ¿En qué años la población crece más rápido?
+        * **Fase de desaceleración**: ¿Cuándo el crecimiento comienza a disminuir?
+        * **Fase de equilibrio**: ¿Cuándo parece que la población se estabiliza?
+    * **Identificación de K**: Basándose en la gráfica, estimen la **capacidad de carga (K)** del ambiente para esta población.
+    * **Factores limitantes**: Lista posibles factores que podrían influir en la estabilización de la población (por ejemplo, disminución de la fuente de alimento, reducción del área de anidación, aumento de la competencia, eventos climáticos). Elijan el factor más probable para explicar la desaceleración del crecimiento que observan en su gráfica, justificando su respuesta.
+
+#### **Parte 3: Discusión**
+
+1.  **Presentación de resultados**: Compartan sus gráficas y sus estimaciones de la capacidad de carga.
+2.  **Preguntas**: 
+    * ¿Por qué el crecimiento no continuó de manera exponencial indefinidamente?
+    * ¿Qué factores específicos del entorno de los cocodrilos podrían actuar como limitantes?
+    * ¿Cómo se relaciona este ejemplo con el concepto de la Ley del Mínimo? (Por ejemplo, ¿podría la disponibilidad de peces ser el nutriente mínimo?)
+    * ¿Qué implicaciones tiene el concepto de capacidad de carga para la conservación de la biodiversidad?
+
+---
+
+# ***Propuesta 9***
+
+---
+
+### **EL MISTERIO DEL CRECIMIENTO DEL UN ALGA EN EL LAGO ENRIQUILLO**
+
+**Objetivo**: 
+
+Analizar datos de una población hipotética de algas para comprender los modelos de crecimiento poblacional y el concepto de capacidad de carga, utilizando gráficos y cálculos sencillos.
+
+#### **Parte 1: Escenario**
+
+Un grupo de ecólogos está estudiando el crecimiento de una especie de alga (`Spirulina platensis`) introducida en un sector aislado del Lago Enriquillo. Se les explica que los ecólogos midieron la biomasa de la población de algas cada 5 días durante un periodo de 50 días.
+
+**Tabla de Datos:**
+
+| Día | Biomasa de Alga (gramos) |
+| :-- | :------------------------- |
+| 0   | 10                         |
+| 5   | 25                         |
+| 10  | 60                         |
+| 15  | 140                        |
+| 20  | 250                        |
+| 25  | 350                        |
+| 30  | 420                        |
+| 35  | 460                        |
+| 40  | 480                        |
+| 45  | 490                        |
+| 50  | 495                        |
+
+#### **Parte 2: Análisis y Gráfico**
+
+1.  **Instrucciones para la manipulación de datos**:
+    * **Gráfico**: Dibujar un gráfico. El eje X será el "Día" (tiempo) y el eje Y será la "Biomasa de Alga". Deben trazar los puntos de la tabla.
+    * **Identificación del crecimiento**: Analicen la forma de la curva que se formó. Deben identificar si se parece a un crecimiento exponencial o a un crecimiento logístico.
+    * **Estimación de K**: Estimen la **capacidad de carga (K)** para la población de algas en ese sector del lago. La capacidad de carga se observará como la biomasa máxima que la población alcanza antes de estabilizarse.
+
+2.  **Cálculos simples**: Calculen la tasa de crecimiento para dos periodos de tiempo distintos para reafirmar la diferencia entre las fases:
+    * **Tasa de crecimiento en la fase inicial (exponencial)**: $(Biomasa_{Día\ 15} - Biomasa_{Día\ 10}) / 5\ días$.
+    * **Tasa de crecimiento en la fase final (logística)**: $(Biomasa_{Día\ 50} - Biomasa_{Día\ 45}) / 5\ días$.
+
+#### **Parte 3: Conclusiones y Debate**
+
+1.  **Comparación de resultados**: Muestren sus gráficos y compartan sus estimaciones de la capacidad de carga. Discutan por qué las estimaciones pueden variar ligeramente.
+2.  **Preguntas**: 
+    * **¿Por qué la tasa de crecimiento cambió?**
+    * **¿Qué factores específicos podrían estar limitando el crecimiento de las algas en el lago?** (Ejemplos: nutrientes como el fósforo o el nitrógeno, luz solar, depredadores, espacio). Relaciona esto directamente con la **Ley del Mínimo de Liebig**.
+    * **¿Cómo se relaciona este ejercicio con la conservación?** (Por ejemplo, ¿qué pasaría si un contaminante liberara exceso de nutrientes? Se relacionaría con la idea de eutrofización).
+    * **¿Qué ocurriría si la capacidad de carga (K) fuera menor?** (Esto podría deberse a una enfermedad que afecta a las algas, un factor limitante nuevo, etc.).
+
+---
+
+# ***Propuesta 10***
+
+## 🧪 “ANALIZANDO LA DINAMICA DE UNA POBLACIÓN SILVESTRE”
+
+**Herramientas sugeridas:** Excel/Google Sheets, calculadora, papel, lápiz, acceso a datos
+
+---
+
+### 🎯 Objetivos de la práctica
+
+- Aplicar conceptos de crecimiento poblacional, estructura etaria y factores limitantes.
+- Manipular datos para calcular tasas de natalidad, mortalidad y crecimiento.
+- Interpretar gráficamente curvas de crecimiento y distribución espacial.
+- Relacionar los resultados con principios ecológicos y su aplicación en conservación.
+
+---
+
+### 📊 Materiales
+
+- Hoja de datos simulados de una población de roedores en un ecosistema tropical (puede incluir número de individuos por clase etaria, sexo, año, densidad por área, eventos ambientales).
+- Plantilla de Excel con fórmulas básicas preconfiguradas.
+- Guía de preguntas para análisis.
+
+---
+
+### 🧩 Actividades
+
+#### **Parte 1: Manipulación de datos**  
+
+1. **Calcular**:
+   - Tasa de natalidad y mortalidad por año.
+   - Tasa de crecimiento poblacional (r).
+   - Densidad poblacional por unidad de área.
+   - Proporción de individuos por clase etaria y sexo.
+
+2. **Graficar**:
+   - Curva de crecimiento (J o S).
+   - Pirámide de edades.
+   - Mapa de distribución espacial (si se incluye coordenadas o zonas).
+
+3. **Identificar**:
+   - Eventos ambientales que pudieron actuar como factores limitantes (sequía, depredación, pérdida de hábitat).
+   - Posible presencia del efecto Allee si la población cae por debajo de cierto umbral.
+
+#### **Parte 2: Discusión**  
+
+- ¿Qué tipo de crecimiento muestra la población? ¿Qué lo limita?
+- ¿Cómo influye la estructura etaria en la dinámica poblacional?
+- ¿Qué medidas de conservación serían necesarias para esta población?
+- ¿Qué hitos históricos de la ecología se relacionan con los modelos usados?
+
+---
+
+### 📁 Recursos
+
+- Datos simulados en Excel:  
+  
+  Año,Individuos Totales,Nacimientos,Muertes,Área (km²),Clase Etaria (Joven/Adulto/Viejo),Sexo (M/F)
+  2020,120,30,10,2.5,J:40 A:60 V:20,M:70 F:50
+  2021,140,35,15,2.5,J:50 A:70 V:20,M:80 F:60
+  2022,160,40,20,2.5,J:60 A:80 V:20,M:90 F:70
+  
+
+---
+
+# ***Propuesta 11***
+
+## 🧪 “DIAGNÓSTICO ECOLÓGICO DE UNA POBLACIÓN SILVESTRE”
+
+
+### 🎯 Objetivos 
+
+- Aplicar conceptos de crecimiento poblacional, estructura etaria y factores limitantes.
+- Manipular datos para calcular tasas ecológicas básicas.
+- Interpretar gráficamente la dinámica poblacional.
+- Relacionar los resultados con principios ecológicos y su aplicación en conservación.
+
+---
+
+### 📊 Material 
+
+Tabla de datos simulados de una población de iguanas en una zona protegida.
+
+plaintext
+Año | Individuos Totales | Nacimientos | Muertes | Área (km²) | Jóvenes | Adultos | Viejos | Machos | Hembras | Evento Ambiental
+2020 | 120 | 30 | 10 | 2.5 | 40 | 60 | 20 | 70 | 50 | Sequía leve
+2021 | 140 | 35 | 15 | 2.5 | 50 | 70 | 20 | 80 | 60 | Incendio forestal
+2022 | 160 | 40 | 20 | 2.5 | 60 | 80 | 20 | 90 | 70 | Introducción de depredador
+
+
+---
+
+### 🧩 Actividades 
+
+#### 🔹 Parte 1: Cálculos y análisis
+
+1. **Tasa de natalidad** = Nacimientos / Individuos Totales  
+2. **Tasa de mortalidad** = Muertes / Individuos Totales  
+3. **Tasa de crecimiento poblacional (r)** = (Nacimientos - Muertes) / Individuos Totales  
+4. **Densidad poblacional** = Individuos Totales / Área  
+5. **Proporción etaria** = Jóvenes, Adultos, Viejos / Individuos Totales  
+6. **Proporción por sexo** = Machos, Hembras / Individuos Totales
+
+Preguntas:
+
+- ¿Qué tipo de curva de crecimiento se observa (J o S)?
+- ¿Qué evento ambiental parece haber afectado más el crecimiento?
+- ¿Hay evidencia de efecto Allee en algún año?
+- ¿Qué ley ecológica podría explicar la disminución o aumento poblacional?
+
+#### 🔹 Parte 2: Discusión 
+
+- ¿Qué factores limitaron el crecimiento poblacional?
+- ¿Cómo influye la estructura etaria en la dinámica?
+- ¿Qué medidas de conservación serían necesarias?
+- ¿Qué hitos históricos de la ecología se relacionan con los modelos usados?
+
+---

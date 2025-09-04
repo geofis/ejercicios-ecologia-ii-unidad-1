@@ -43,11 +43,31 @@ df_log <- tibble(
   t = t,
   N_log = K / (1 + ((K - N0) / N0) * exp(-r * t))
 )
-
 df_log_tabla <- df_log %>%
   mutate(N_log = round(N_log, 2))
 
 print(df_log_tabla)
+# Gráfico ggplot2
+ggplot(df_log, aes(t, N_log)) +
+  geom_line(linewidth = 1, color = "blue") +
+  geom_point(size = 2, color = "blue") +
+  labs(title = "Crecimiento poblacional logístico",
+       x = "Generación (t)", y = "Tamaño poblacional (N)") +
+  theme_minimal()
+
+# Haciendo la logística, pero con t = 0:20 para ver mejor la forma de S
+t_long <- 0:20
+df_log_long <- tibble(
+  t = t_long,
+  N_log = K / (1 + ((K - N0) / N0) * exp(-r * t_long))
+)
+# Grafico ggplot2
+ggplot(df_log_long, aes(t, N_log)) +
+  geom_line(linewidth = 1, color = "blue") +
+  geom_point(size = 2, color = "blue") +
+  labs(title = "Crecimiento poblacional logístico (t=0:20)",
+       x = "Generación (t)", y = "Tamaño poblacional (N)") +
+  theme_minimal()
 
 ## ---------------------------
 ## Comparación de curvas (Exponencial vs Logístico)
